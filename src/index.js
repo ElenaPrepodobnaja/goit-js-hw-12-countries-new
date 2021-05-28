@@ -1,7 +1,7 @@
 import './sass/main.scss';
 import countriesListMarkup from "./temp/countries-list.hbs";
 import countryMarkup from "./temp/countries-markup.hbs";
-import API from './js/fetchCountries';
+import country from './js/fetchCountries';
 import debounce from 'lodash.debounce';
 import { info, error } from '@pnotify/core';
 import '@pnotify/core/dist/PNotify.css';
@@ -20,7 +20,7 @@ function onSearch() {
 
     if (searchedCountry === "") return;
 
-    API.fetchCountry(searchedCountry)
+    country.fetchCountry(searchedCountry)
         .then(isFetchSucces)
         .catch(onFetchErrorNoResults)
 
