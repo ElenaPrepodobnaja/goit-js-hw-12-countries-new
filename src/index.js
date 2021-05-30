@@ -16,7 +16,7 @@ searchInput.addEventListener('input', debounce(onSearch, 500));
 function onSearch() {
 
     cardContainer.innerHTML = ""
-    const searchedCountry = searchInput.value;
+    const searchedCountry = searchInput.value.trim();
 
     if (searchedCountry === "") return;
 
